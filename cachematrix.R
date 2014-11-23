@@ -5,8 +5,6 @@
 ## 3. set the value of the mean
 ## 4. get the value of the mean
 
-
-
 makeVector <- function(x = numeric()) {
   # sets x equal to an empty numeric vector
   m <- NULL
@@ -26,8 +24,6 @@ makeVector <- function(x = numeric()) {
 ##mean has already been calculated. If so, it gets the mean from the cache and skips the computation.
 ##Otherwise, it calculates the mean of the data and sets the value of the mean in the cache 
 ##via the setmean function.
-
-
 cachemean <- function(x, ...) {
   m <- x$getmean()
   if(!is.null(m)) {
@@ -40,18 +36,13 @@ cachemean <- function(x, ...) {
   m
 }
 
-
-
-
-
 ## Put comments here that give an overall description of what your
 ## functions do
-
 ## Write a short comment describing this function
-
 
 ## PART 1
 ## makeCacheMatrix: This function creates a special "matrix" object that can cache its inverse.
+##start 
 makeCacheMatrix <- function(x = matrix()) {
   a<- NULL
 ## matrix will start empty  and the inverse as null
@@ -72,11 +63,12 @@ getInv <- function() a
 ## list the functions
 list(set = set, get = get, Inv = Inv, getInv = getInv)
 }
+## end of part 1
 
 ## Write a short comment describing this function
 ##PART 2
+##start
 cacheSolve <- function(x, ...) {
-
   ##returns the inverse of x
   a <- x$getInv()  
 ## If the value is of the inverse is not null returns the value and displays a message. 
@@ -93,4 +85,4 @@ a <- solve(data, ...)
 x$setInverse(a)
 a ## returns the value of a
 }
-## end 
+## end of part 2
